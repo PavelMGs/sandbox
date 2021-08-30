@@ -1,3 +1,4 @@
+import { useRouter } from 'next/dist/client/router';
 import React, { FormEvent, useState } from 'react'
 import Header from '../components/Header/Header';
 import { newPost } from '../effector/events/events';
@@ -6,10 +7,10 @@ import s from '../styles/New.module.scss';
 const New = () => {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
+    const router = useRouter();
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log(title, body);
         //@ts-ignore
         newPost({
             title,
@@ -18,6 +19,7 @@ const New = () => {
         })
         setTitle('');
         setBody('');
+        router.push('/');
     }
 
     return (
