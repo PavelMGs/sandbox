@@ -1,3 +1,3 @@
 import { createEvent } from "effector";
 
-const fetchEvent = createEvent();
+export const newPost = createEvent();

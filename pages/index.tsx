@@ -1,26 +1,27 @@
 
 import { useList, useStore } from 'effector-react';
 import React, { useEffect } from 'react'
+import Header from '../components/Header/Header';
 import { fetchData } from '../effector/effects/effects';
 import { dataStore } from '../effector/store/store';
-
+import s from '../styles/Index.module.scss';
 
 const Index = () => {
 
 
     return (
-        <div>
-            sd
-            {
-                useList(dataStore, (post) => (
-                    <div key={post.id}>
-                        {post.title}
-                        <br />
-                        {post.body}
-                        <hr />
-                    </div>
-                ))
-            }
+        <div className={s.root}>
+            <Header />
+            <div className={s.posts}>
+                {
+                    useList(dataStore, (post) => (
+                        <div key={post.id} className={s.post}>
+                            <h2>{post.title}</h2>
+                            <article>{post.body}</article>
+                        </div>
+                    ))
+                }
+            </div>
         </div>
     )
 }

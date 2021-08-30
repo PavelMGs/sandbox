@@ -1,0 +1,28 @@
+.root {
+    display: flex;
+    height: 100vh;
+}
+
+.posts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 140px;
+}
+
+.post {
+
+    text-align: center;
+
+    padding: 15px auto;
+    margin-bottom: 15px;
+
+    width: 90%;
+
+    border: 1px solid black;
+
+    & > h2 {
+        margin-top: 0;
+    }
+}

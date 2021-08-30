@@ -1,0 +1,23 @@
+.root {
+    position: absolute;
+    top: 0;
+
+    display: flex;
+    justify-content: flex-end;
+
+    width: 100vw;
+    height: 70px;
+
+    background-color: #707fd8;
+}
+
+.link {
+    width: 140px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+        background-color: #3f51b5;
+    }
+}

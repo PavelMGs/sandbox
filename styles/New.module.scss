@@ -1,0 +1,33 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 140px;
+
+    & > input:nth-child(1) {
+        width: 40vw;
+        margin-bottom: 15px;
+        border-radius: 5px;
+    }
+
+    & > textarea {
+        width: 40vw;
+        border-radius: 5px;
+        margin-bottom: 15px;
+    }
+
+    & > input:nth-child(3) {
+        width: 110px;
+        height: 50px;
+        background-color: rgb(113, 113, 228);
+
+        border: none;
+        outline: none;
+        border-radius: 8px;
+
+        &:active {
+            background-color: rgb(83, 83, 179);
+        }
+    }
+}
