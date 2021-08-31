@@ -1,7 +1,7 @@
 import { useRouter } from 'next/dist/client/router';
 import React, { FormEvent, useState } from 'react'
 import Header from '../components/Header/Header';
-import { newPost } from '../effector/events/events';
+import { newPost } from '../effector/store/store';
 import s from '../styles/New.module.scss';
 
 const New = () => {

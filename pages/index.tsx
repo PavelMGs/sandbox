@@ -2,8 +2,7 @@
 import { useList, useStore } from 'effector-react';
 import React, { useEffect } from 'react'
 import Header from '../components/Header/Header';
-import { fetchData } from '../effector/effects/effects';
-import { dataStore } from '../effector/store/store';
+import { dataStore, fetchData } from '../effector/store/store';
 import s from '../styles/Index.module.scss';
 
 const Index = () => {

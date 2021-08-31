@@ -1,10 +1,22 @@
-import { createStore } from "effector";
-import { fetchData } from "../effects/effects";
-import { newPost } from "../events/events";
+import {
+  createDomain,
+  createEvent,
+  createStore,
+  sample,
+  createEffect,
+} from "effector";
 
+
+
+export const fetchData = createEffect(async () => {
+  const data = await fetch(`https://mg-blog-api.herokuapp.com/api/blog`);
+  const json = await data.json();
+  return json;
+});
+export const newPost = createEvent()
 
 export const dataStore = createStore([])
-.on(fetchData.doneData, (list, data) => {
+.on(fetchData.doneData, (list, data: any) => {
   return data;
 })
 .on(newPost, (state, post) => [
@@ -12,7 +24,4 @@ export const dataStore = createStore([])
   post,
 ])
 
-fetchData();
-
-
-dataStore.watch(value => console.log(value))
+fetchData()
