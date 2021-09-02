@@ -1,7 +1,7 @@
 import { useRouter } from 'next/dist/client/router';
-import React, { FormEvent, useState } from 'react'
+import React, { FormEvent, useEffect, useState } from 'react'
 import Header from '../components/Header/Header';
-import { newPost } from '../effector/store/store';
+import { postCreated } from '../models/store/store';
 import s from '../styles/New.module.scss';
 
 const New = () => {
@@ -9,10 +9,15 @@ const New = () => {
     const [body, setBody] = useState('');
     const router = useRouter();
 
+
+    useEffect(() => {
+        console.log(router);
+    }, [])
+
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         //@ts-ignore
-        newPost({
+        postCreated({
             title,
             body,
             id: Date.now()
